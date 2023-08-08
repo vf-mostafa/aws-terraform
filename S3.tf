@@ -1,5 +1,5 @@
 resource "aws_iam_role" "s3_session_manager_role" {
-  name = "s3-session-manager-role"
+  name               = "s3-session-manager-role"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
