@@ -22,18 +22,17 @@ resource "aws_iam_policy" "s3_access_policy" {
   description = "Allows put/get access to S3 bucket"
   policy      = <<EOF
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "AllowS3Access",
-      "Effect": "Allow",
-      "Action": [
-        "s3:PutObject",
-        "s3:GetObject"
-      ],
-      "Resource": "arn:aws:s3:::my-s3-bucket.aws-terraform-practice-1"
-    }
-  ]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*",
+                "s3-object-lambda:*"
+            ],
+            "Resource": "arn:aws:s3:::my-s3-bucket.aws-terraform-practice-1"
+        }
+    ]
 }
 EOF
 }
