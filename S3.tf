@@ -30,11 +30,14 @@ resource "aws_iam_policy" "s3_access_policy" {
                 "s3:*",
                 "s3-object-lambda:*"
             ],
+
             "Resource": "arn:aws:s3:::my-s3-bucket.aws-terraform-practice-1"
         }
     ]
 }
 EOF
+
+            #"Resource": "arn:aws:s3:::my-s3-bucket.aws-terraform-practice-1"
 }
 
 resource "aws_iam_policy_attachment" "s3_access_attachment" {
